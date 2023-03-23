@@ -1,0 +1,12 @@
+@import 'base/variables';
+* {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+}
+.container {
+    max-width: 950px; /*(это ширина 10-ти колонок в макете)*/
+    margin: 0 auto;
+}
+
+@import 'blocks/promo'; /*из blocks берем promo*/
+@import 'blocks/_header.scss';
+@import 'blocks/buttons';
