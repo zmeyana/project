@@ -1,0 +1,160 @@
+.catalog {
+    padding-bottom: 90px;
+    &__tabs {
+        margin-top: 50px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+    &__tab {
+        width: 222px;
+        height: 52px;
+        border: 2px solid #D0D0D0;
+        font-weight: 400;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 48px; /* чтобы текст встал посередине, это почти столько же, сколько в height (для выравнивания надписи в одну строчку) */
+        transform:skewX(-25deg); /* чтобы наклонить прямоугольники */
+        margin: 0 5px; /* у каждого таб. будет отступ в право и влево и будет равен расст. между таб. (10px) */
+        cursor: pointer;
+        transition: 0,5s all;
+        &:hover {
+            box-shadow: 3px 3px 20px $main-color; /* 3 - cначала по X, затем по Y (вниз и вправо) если отриц., то было бы вверх и влево, 20px - размытие этой тени */
+            border: none;
+        }
+        div {
+            transform:skewX(25deg); /* для эл-ов внутри div трансф. в другую сторону, чтобы текст встал прямо */
+        }
+        &_active {
+            color: #fff;
+            background-color: $main-color;
+            border: none;
+        }
+    }
+    &__content {
+        margin-top: 60px;
+        display: none;
+        justify-content: space-between;
+        align-items:center;
+        flex-wrap: wrap;
+        &_active {
+            display: flex;
+        }
+    }
+    &-item {
+        width: 260px;
+        min-height: 440px;
+        border: 2px solid #e8e8e8;
+        padding: 20px 20px 26px 20px;
+        overflow: hidden; /*скрывает содержимое, выходящее за пределы контейнера. scroll.*/
+        margin-bottom: 20px;
+        &__img {
+            display: block; /* блок можно выравнивать */
+            margin: 0 auto;
+            max-width: 100%; /* если вдруг туда поподет картинка больше, чем блок, то она сожмется */
+            height: 200px;
+        }
+        &__subtitle {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0D0D0D;
+            text-align: center;
+        }
+        &__descr {
+            margin-top: 16px;
+            font-weight: 300;
+            font-size: 14px;
+            text-align: center;
+            color: #0D0D0D;
+        }
+        &__link,&__back {
+            display: block;
+            margin-top: 17px;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: $main-color;
+            text-transform: uppercase;
+            &:hover {
+                color: $main-color; /*чтобы при наведении на ссылку её цвет не менялся*/
+            }
+        }
+      
+        hr {
+            background-color: #E8E8E8;
+            margin-top: 19px;
+            margin-bottom: 21px;
+            border-bottom: none; /*скрыли таким образом одну из границ,чтобы полоска занимаала 1px*/
+        }
+        &__footer {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__old-price {
+            font-weight: 300;
+            font-size: 14px;
+            text-decoration-line: line-through;
+            color: #555555;
+        }
+        &__new-price {
+            font-weight: 700;
+            font-size: 20px;
+            color: #050505;
+        }
+        &__wrapper {
+            display: flex;
+            width: calc(200% + 40px); /* позволяет вычислять различные css величины (40px это mR и mL контента и листа) */
+        }
+        &__content {
+            width: 50%;
+            margin-right: 0px;
+            transform: translateX(-100%); /* когда класс актив. убирается - он убирется влево на 100%*/
+            transition: 0.5s all; /*для плавного перехода*/
+            &_active {
+                transform: translateX(0%); /*т.е. он будет стоять на своем месте,когда будет актив.*/
+                margin-right: 20px;
+            }
+        }
+        &__list {
+            position: relative;/*т.к. у бефор абсолют, у родителя должен быть релетив*/
+            width: 45%;
+            margin-left: 20px;
+            transform: translateX(0%); 
+            transition: 0.5s all; /*для плавного перехода*/
+            margin-bottom: 0;/*когда поставили ul там уже есть определенные параметры,которые не нужны (это можно см. в консоли разраб.)*/
+            list-style-type: none; /*позволяет убрать маркеры списка*/
+            padding-right: 20px;
+            &_active {
+                transform: translateX(-100%);
+                margin-left: 0px;
+            /* таким образом контент и лист будут друг друга заменять*/  
+            }
+            li {
+                position: relative; /*т.к. у бефор абсолют, у родителя должен быть релетив*/
+                font-weight: 300;
+                font-size: 14px;
+                color: #555555;
+                margin-bottom: 20px;
+                &:before { /*квадратики*/
+                    content:'';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background-color:$main-color;
+                    left: -14px;
+                    top: 7px;
+                }
+            }
+        }
+          
+    }
+
+        
+}

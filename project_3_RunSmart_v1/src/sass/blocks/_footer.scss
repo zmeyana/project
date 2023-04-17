@@ -1,0 +1,51 @@
+.footer {
+    height: 630px;
+    position: relative;
+    &__info {
+        position: absolute; /*чтобы наложить поверх карты*/
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 425px;
+        height: 215px;
+        background-color: $main-color;
+        padding: 50px 55px 55px 53px;
+    }
+    &__addr {
+        margin-bottom: 36px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        line-height: 20px;
+    }
+    &__phone {
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        color: #FFFFFF;
+        margin-bottom: 35px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 20px;
+    }
+    &__social-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 52px;
+        height: 52px;
+        border: 2px solid #FFFFFF;
+        border-radius: 100%;
+        margin: 0 15px; /*связан с __social и помогает выровнять иконки*/
+        img {
+            height: 27px;
+        }
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+}

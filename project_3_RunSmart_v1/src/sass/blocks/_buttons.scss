@@ -17,5 +17,15 @@
         top: 14px;
         font-size: 16px;
     }
-
+    &_submit {
+        width: 100%; /* подстраивается под форму */
+        border-radius: 5px;
+        height: 55px;
+        color: #FFFFFF;
+    }
+    &_mini {
+        width: 135px;
+        height: 44px;
+        font-size: 14px;
+    }
 }
