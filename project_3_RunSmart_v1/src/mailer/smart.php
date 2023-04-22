@@ -5,21 +5,23 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 
 require_once('phpmailer/PHPMailerAutoload.php');
+$ini = parse_ini_file('config.ini');
+
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-// $mail->SMTPDebug = 3;                               // Enable verbose debug output
+// $mail->SMTPDebug = 3;                            // Enable verbose debug output
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.mail.ru';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'yanavladislavovna3@mail.ru';                 // Наш логин
-$mail->Password = 'ysq55Y3GmuuxVHWqnN5g';                           // Наш пароль от приложения
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
+$mail->isSMTP();                                    // Set mailer to use SMTP
+$mail->Host = $ini['smtp_host'];  					// Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                             // Enable SMTP authentication
+$mail->Username = $ini['smtp_username'];            // Наш логин
+$mail->Password = $ini['smtp_password'];            // Наш пароль от приложения
+$mail->SMTPSecure = 'ssl';                          // Enable TLS encryption, `ssl` also accepted
+$mail->Port = $ini['smtp_port'];                    // TCP port to connect to
  
-$mail->setFrom('yanavladislavovna3@mail.ru', 'Pulse');   // От кого письмо 
-$mail->addAddress('yanavladislavovna3@mail.ru');     // Add a recipient куда будет приходить письмо
+$mail->setFrom($ini['smtp_username'], 'Pulse');   // От кого письмо 
+$mail->addAddress($ini['smtp_username']);     // Add a recipient куда будет приходить письмо
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
