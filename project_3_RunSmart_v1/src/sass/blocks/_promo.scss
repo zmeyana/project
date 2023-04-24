@@ -8,7 +8,6 @@
         align-items: flex-end;
         margin-top: 90px;
     }
-
     &__header {
         font-weight: 700;
         font-size: 42px;
@@ -16,7 +15,6 @@
         color: #FFFFFF;
         line-height: 42px;
     }
-
     &__subheader {
         font-weight: 500;
         font-size: 24px;
@@ -25,14 +23,12 @@
         line-height: 24px;
         margin-top: 15px;
     }
-
     &__icons {
         margin-top: 64px;
         width: 425px;
         display: flex;
         justify-content: space-between; /* эл-ты равномерно распределены по линии */
     }
-
     &__icon {
         width: 108px;
         text-align: center;
@@ -45,7 +41,6 @@
             margin-bottom: 20px; /* почитать подробнее */
         }
     }
-
     &__link {
         margin-top: 10px;
         font-weight: 500;

@@ -6,6 +6,7 @@
     font-family: 'Museo Sans Cyrl', sans-serif;
 }
 .container {
+    position: relative;
     max-width: 950px; /*(это ширина 10-ти колонок в макете)*/
     margin: 0 auto;
 }
