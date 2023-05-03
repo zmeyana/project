@@ -1,0 +1,27 @@
+
+.swiper {
+  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  position: relative;
+  width: 750px;
+  margin: 0 auto;
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 450px;
+  }   
+}
+.slick-next  {
+  right: -66px;
+  left: auto;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f00;
+}
+
+
+

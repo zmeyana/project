@@ -1,17 +1,17 @@
 //$(function() {
-$(document).ready(function(){ /*отвечает за то, чтобы мы загружали наш сл. тогда, когд. наш док.(HTML) полностью готов*/
-  $/*библиотека*/('.carousel__inner').slick({
-  speed: 1200,
-  slidesToShow: 1, /*кол-во картинок на слайде*/
-  prevArrow: '<button type="button" class="slick-prev"><img src="../img/left_solid.png"></button>',
-  nextArrow: '<button type="button" class="slick-next"><img src="../img/right_solid.png"></button>',
-  });
+/* $(document).ready(function(){ /*отвечает за то, чтобы мы загружали наш сл. тогда, когд. наш док.(HTML) полностью готов*/
+  // $/*библиотека*/('.carousel__inner').slick({
+  // speed: 1200,
+  // slidesToShow: 1, /*кол-во картинок на слайде*/
+  // prevArrow: '<button type="button" class="slick-prev"><img src="../img/left_solid.png"></button>',
+  // nextArrow: '<button type="button" class="slick-next"><img src="../img/right_solid.png"></button>',
+  // });
 
-  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() { /*где ul. и not() - подставили свои классы*/
-    $(this) /*ссылается на эл-ент, на который мы только что нажали*/
-      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-      .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-  });
+//  /* /*  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() { /*где ul. и not() - подставили свои классы*/
+//     $(this) /*ссылается на эл-ент, на который мы только что нажали*/
+//       .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+//       .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+//   });  */ */ */
 
 
 
@@ -129,6 +129,30 @@ $(document).ready(function(){ /*отвечает за то, чтобы мы за
 });
 
 new WOW().init();
+
+// });
+
+
+$("swiper-slide img").each(function () {
+  $(this).css("margin-left", -this.width / 2);
+})
+
+const swiper = new Swiper('.mySwiper', {
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+  
+  loop: true,
+ 
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  // And if we need scrollbar
 
 });
 
