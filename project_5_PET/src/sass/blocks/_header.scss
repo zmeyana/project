@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+        width: 90px;
+        img {
+            width: 100%; /* продумываем наперед, чтобы при изменении логотипа любая картинка подстраивалась под первый размер */
+        }
+    }
+    &__menu {
+        font-size: 13px;
+        font-weight: 300;
+    }
+    &__link {
+        color: #414141;
+        text-decoration: none;
+        padding-left: 50px;
+        button {
+            border-radius: 5px;
+            width: 130px;
+            height: 36px;
+            background: $main-color;
+        }
+    }
+}

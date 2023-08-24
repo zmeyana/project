@@ -1,0 +1,12 @@
+@import 'base/variables';
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container { /* если нет сетки, то задаем контейнеру размер 10-ти колонок (950) */
+    min-width: 950px;
+    margin: 0 auto;
+}
+
+@import 'blocks/promo';
+@import 'blocks/header.scss';
