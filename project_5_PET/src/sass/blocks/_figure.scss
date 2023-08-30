@@ -1,0 +1,13 @@
+.figure {
+    margin-top: 50px;
+    margin-left: 30px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background:rgba($color: #D8D8D8, $alpha: 0.15);
+    border-radius: 50%;
+    text-align: center;
+    &_messenger {
+        background: black;
+    }
+}
