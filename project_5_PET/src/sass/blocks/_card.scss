@@ -1,0 +1,70 @@
+.card {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 130px;
+  }
+  &__item {
+    width: 480px;
+    height: 260px;
+    border: 2px solid #f6f6f6;
+    // начала делать по подсказкам в интернете
+    /* flex-basis: calc(50% - 10px);*/ /* initial width set to 50% of the parent's - left & right margins */
+    margin: 0 5px; /* preferably top & bottom margins set to zero to keep calculations simple */
+    box-sizing: border-box;
+    &:nth-child(2) {
+      margin-top: 150px;
+    }
+    &:nth-child(odd):not(:first-child) {
+      margin-top: -150px;
+    }
+    &:nth-child(even):not(:nth-child(2)) {
+      margin-top: 10px;
+    }
+    // закончила делать по подсказке из интернета
+  }
+  &__icon {
+    margin-top: 55px;
+    margin-left: 30px;
+  }
+  &__subtitle {
+    margin-top: 15px;
+    margin-left: 30px;
+    color: #212121;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__descr {
+    margin-top: 15px;
+    margin-left: 30px;
+    color: #C5C5C5;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px; 
+  }
+}
+
+// /* .flex > div {
+//   flex-basis: calc(50% - 10px); /* initial width set to 50% of the parent's - left & right margins */
+//   height: 100px;
+//   margin: 0 5px; /* preferably top & bottom margins set to zero to keep calculations simple */
+//   border: 1px solid;
+//   box-sizing: border-box; /* because of the borders, also recommended in general */
+// }
+
+// .flex > div:nth-child(2){
+//   margin-top: 55px; /* half of divs height + half of the desired gap between them; modification affects all but the first div */
+// }
+
+
+// .flex > div:nth-child(odd):not(:first-child){
+//   margin-top: -45px; /* - half of divs height + half of the desired gap between them, so in this case the gap is 10px (2 x 5px); modification affects all but the first odd div (if ofc. modification is "")  */
+// }
+
+
+// .flex > div:nth-child(even):not(:nth-child(2)){
+//   margin-top: 10px; /* gap size; modification affects all but the first three divs */
+// }  */
